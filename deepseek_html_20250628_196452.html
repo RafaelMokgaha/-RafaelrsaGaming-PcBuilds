@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAFAELRSA GAMING BUILD | Ultimate Gaming Performance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff0055;
+            --secondary: #00aaff;
+            --dark: #0a0e17;
+            --darker: #070a10;
+            --light: #f0f5ff;
+            --gray: #2a324b;
+            --transition: all 0.4s ease;
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(10, 14, 23, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary);
+            box-shadow: 0 5px 25px rgba(255, 0, 85, 0.15);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: var(--transition);
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 5% 4rem;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 0, 85, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(45deg, #fff, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px rgba(0, 170, 255, 0.5); }
+            100% { text-shadow: 0 0 30px rgba(255, 0, 85, 0.8), 0 0 60px rgba(255, 0, 85, 0.5); }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            color: #c2d0ff;
+        }
+
+        .specs-highlight {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .spec-card {
+            background: rgba(42, 50, 75, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            min-width: 200px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 0, 85, 0.2);
+        }
+
+        .spec-card h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-card p {
+            font-size: 1rem;
+            margin: 0;
+            color: var(--light);
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 25px rgba(255, 0, 85, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 170, 255, 0.5);
+            letter-spacing: 3px;
+        }
+
+        /* Components Section */
+        .components {
+            padding: 6rem 5%;
+            background: var(--darker);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #a0b0ff;
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .component-card {
+            background: rgba(42, 50, 75, 0.7);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .component-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--primary);
+        }
+
+        .component-img {
+            height: 200px;
+            background: linear-gradient(45deg, #1a1f30, #2a324b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-img::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+
+        .component-img i {
+            font-size: 5rem;
+            z-index: 2;
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(255, 0, 85, 0.5);
+        }
+
+        .component-info {
+            padding: 2rem;
+        }
+
+        .component-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .spec-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .spec-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: #a0b0ff;
+        }
+
+        .spec-value {
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 5%;
+            background: linear-gradient(to bottom, var(--darker), var(--dark));
+            text-align: center;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 45px rgba(255, 0, 85, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            padding: 4rem 5% 2rem;
+            border-top: 2px solid var(--primary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-column p {
+            color: #a0b0ff;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0b0ff;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .specs-highlight {
+                gap: 1.5rem;
+            }
+            
+            .spec-card {
+                min-width: 150px;
+                padding: 1rem;
+            }
+            
+            .spec-card h3 {
+                font-size: 1.4rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <div class="logo-text">RAFAELRSA GAMING</div>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#components">Components</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>ULTIMATE GAMING BUILD</h1>
+        <p>Experience unparalleled gaming performance with the RAFAELRSA custom gaming PC. Engineered for victory with cutting-edge components.</p>
+        
+        <div class="specs-highlight">
+            <div class="spec-card">
+                <h3>RTX 4090</h3>
+                <p>GRAPHICS CARD</p>
+            </div>
+            <div class="spec-card">
+                <h3>i9-14900K</h3>
+                <p>PROCESSOR</p>
+            </div>
+            <div class="spec-card">
+                <h3>64GB DDR5</h3>
+                <p>RAM MEMORY</p>
+            </div>
+            <div class="spec-card">
+                <h3>4TB NVMe</h3>
+                <p>STORAGE</p>
+            </div>
+        </div>
+        
+        <button class="cta-button">BUILD YOURS NOW</button>
+    </section>
+
+    <!-- Components Section -->
+    <section class="components" id="components">
+        <div class="section-title">
+            <h2>PREMIUM COMPONENTS</h2>
+            <p>Every component is carefully selected for maximum performance, reliability, and aesthetics</p>
+        </div>
+        
+        <div class="component-grid">
+            <!-- GPU Card -->
+            <div class="component-card">
+                <div class="component-img">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="component-info">
+                    <h3>NVIDIA GeForce RTX 4090</h3>
+                    <p>The ultimate GPU for gaming and creation, powered by the NVIDIA Ada Lovelace architecture.</p>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">VRAM:</span> <span class="spec-value">24GB GDDR6X</span></li>
+                        <li><span class="spec-label">Cores:</span> <span class="spec-value">16,384 CUDA</span></li>
+                        <li><span class="spec-label">Boost Clock:</span> <span class="spec-value">2.52 GHz</span></li>
+                        <li><span class="spec-label">Power:</span> <span class="spec-value">450W</span></li>
+                        <li><span class="spec-label">Ray Tracing:</span> <span class="spec-value">3rd Gen</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- CPU Card -->
+            <div class="component-card">
+                <div class="component-img">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="component-info">
+                    <h3>Intel Core i9-14900K</h3>
+                    <p>Desktop processor featuring hybrid architecture with 24 cores and 32 threads.</p>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Cores:</span> <span class="spec-value">24 (8P+16E)</span></li>
+                        <li><span class="spec-label">Threads:</span> <span class="spec-value">32</span></li>
+                        <li><span class="spec-label">Max Turbo:</span> <span class="spec-value">6.0 GHz</span></li>
+                        <li><span class="spec-label">Cache:</span> <span class="spec-value">36MB</span></li>
+                        <li><span class="spec-label">TDP:</span> <span class="spec-value">125W</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- RAM Card -->
+            <div class="component-card">
+                <div class="component-img">
+                    <i class="fas fa-memory"></i>
+                </div>
+                <div class="component-info">
+                    <h3>Corsair Dominator Platinum RGB</h3>
+                    <p>Premium DDR5 memory with exceptional performance and stunning RGB lighting.</p>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Capacity:</span> <span class="spec-value">64GB (4x16GB)</span></li>
+                        <li><span class="spec-label">Speed:</span> <span class="spec-value">DDR5-7200</span></li>
+                        <li><span class="spec-label">Timing:</span> <span class="spec-value">CL34</span></li>
+                        <li><span class="spec-label">Voltage:</span> <span class="spec-value">1.4V</span></li>
+                        <li><span class="spec-label">RGB:</span> <span class="spec-value">Capellix LED</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Motherboard Card -->
+            <div class="component-card">
+                <div class="component-img">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <div class="component-info">
+                    <h3>ASUS ROG Maximus Z790</h3>
+                    <p>Premium motherboard designed for extreme performance and overclocking.</p>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Socket:</span> <span class="spec-value">LGA 1700</span></li>
+                        <li><span class="spec-label">Chipset:</span> <span class="spec-value">Intel Z790</span></li>
+                        <li><span class="spec-label">RAM Slots:</span> <span class="spec-value">4x DDR5</span></li>
+                        <li><span class="spec-label">PCIe:</span> <span class="spec-value">5.0 x16</span></li>
+                        <li><span class="spec-label">Networking:</span> <span class="spec-value">10GbE + WiFi 6E</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Cooling Card -->
+            <div class="component-card">
+                <div class="component-img">
+                    <i class="fas fa-fan"></i>
+                </div>
+                <div class="component-info">
+                    <h3>NZXT Kraken Z73 RGB</h3>
+                    <p>360mm AIO liquid cooler with customizable LCD display and RGB lighting.</p>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Radiator:</span> <span class="spec-value">360mm</span></li>
+                        <li><span class="spec-label">Fans:</span> <span class="spec-value">3x Aer P 120mm</span></li>
+                        <li><span class="spec-label">Display:</span> <span class="spec-value">2.36" LCD</span></li>
+                        <li><span class="spec-label">Pump Speed:</span> <span class="spec-value">800-2800 RPM</span></li>
+                        <li><span class="spec-label">Compatibility:</span> <span class="spec-value">Intel/AMD</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Storage Card -->
+            <div class="component-card">
+                <div class="component-img">
+                    <i class="fas fa-hdd"></i>
+                </div>
+                <div class="component-info">
+                    <h3>Samsung 990 Pro 4TB</h3>
+                    <p>Ultra-fast PCIe 4.0 NVMe SSD for gaming and professional workloads.</p>
+                    <ul class="spec-list">
+                        <li><span class="spec-label">Capacity:</span> <span class="spec-value">4TB</span></li>
+                        <li><span class="spec-label">Interface:</span> <span class="spec-value">PCIe 4.0 x4</span></li>
+                        <li><span class="spec-label">Read Speed:</span> <span class="spec-value">7,450 MB/s</span></li>
+                        <li><span class="spec-label">Write Speed:</span> <span class="spec-value">6,900 MB/s</span></li>
+                        <li><span class="spec-label">Endurance:</span> <span class="spec-value">2,400 TBW</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-title">
+            <h2>BUILD GALLERY</h2>
+            <p>Stunning visuals of the RAFAELRSA gaming build with premium components and RGB lighting</p>
+        </div>
+        
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Gaming PC Front View">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Gaming PC Components">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1593118247619-e2d6f056869e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Gaming Setup">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>RAFAELRSA GAMING</h3>
+                <p>Building the ultimate gaming experiences with cutting-edge technology and premium components.</p>
+                <p>Performance. Aesthetics. Reliability.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>COMPONENTS</h3>
+                <ul class="spec-list">
+                    <li><span class="spec-label">GPU:</span> <span class="spec-value">RTX 4090</span></li>
+                    <li><span class="spec-label">CPU:</span> <span class="spec-value">i9-14900K</span></li>
+                    <li><span class="spec-label">RAM:</span> <span class="spec-value">64GB DDR5</span></li>
+                    <li><span class="spec-label">Motherboard:</span> <span class="spec-value">ROG Maximus Z790</span></li>
+                    <li><span class="spec-label">Storage:</span> <span class="spec-value">4TB NVMe SSD</span></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>CONTACT US</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Gaming Tech Street, PC Master City</p>
+                <p><i class="fas fa-phone"></i> +1 (555) GAM-PC</p>
+                <p><i class="fas fa-envelope"></i> build@rafaelrsagaming.com</p>
+                <p><i class="fas fa-clock"></i> Support: 24/7</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 RAFAELRSA GAMING BUILD. All rights reserved. Designed for ultimate performance.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to component cards when they enter the viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.component-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(50px)";
+            card.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+            observer.observe(card);
+        });
+
+        // CTA Button Animation
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('mouseenter', () => {
+            ctaButton.style.background = "linear-gradient(45deg, var(--secondary), var(--primary))";
+        });
+        ctaButton.addEventListener('mouseleave', () => {
+            ctaButton.style.background = "linear-gradient(45deg, var(--primary), var(--secondary))";
+        });
+    </script>
+</body>
+</html>
